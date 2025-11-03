@@ -1,4 +1,6 @@
 ﻿
+using FNAScreenSaver.Services;
+
 namespace FNAScreenSaver
 {
     /// <summary>
@@ -11,6 +13,10 @@ namespace FNAScreenSaver
         /// </summary>
         static void Main(string[] args)
         {
+            using (GameEngine game = new GameEngine())
+            {
+                game.Run();
+            }
         }
     }
 
