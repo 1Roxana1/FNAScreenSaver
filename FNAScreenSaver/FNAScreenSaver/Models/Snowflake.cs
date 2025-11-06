@@ -46,7 +46,7 @@ namespace FNAScreenSaver.Models
         public void Reset(int startPosition)
         {
             Y = -Random.Shared.Next(SnowflakeConstants.MinStartY, SnowflakeConstants.MaxStartY);
-            X = Random.Shared.Next(0, (int)startPosition);
+            X = Random.Shared.Next(0, startPosition);
 
             Speed = Random.Shared.NextSingle() *
                      (SnowflakeConstants.MaxSpeed - SnowflakeConstants.MinSpeed) + SnowflakeConstants.MinSpeed;

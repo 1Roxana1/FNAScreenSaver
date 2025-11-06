@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using FNAScreenSaver.Constants;
+﻿using FNAScreenSaver.Constants;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
@@ -14,12 +11,12 @@ namespace FNAScreenSaver.Services
     /// </summary>
     public class GameEngine : Game
     {
-        private GraphicsDeviceManager graphics;
-        private SpriteBatch spriteBatch;
-        private Texture2D backgroundTexture;
-        private Texture2D snowflakeTexture;
+        private GraphicsDeviceManager graphics = null!;
+        private SpriteBatch spriteBatch = null!;
+        private Texture2D backgroundTexture = null!;
+        private Texture2D snowflakeTexture = null!;
 
-        private SnowflakeManager snowflakeManager;
+        private SnowflakeManager snowflakeManager = null!;
 
         /// <summary>
         /// Инициализировать новый экземпляр <see cref="GameEngine"/>
@@ -77,7 +74,7 @@ namespace FNAScreenSaver.Services
             var snowflakes = snowflakeManager.GetAllSnowflakes();
             foreach (var snowflake in snowflakes)
             {
-                var origin = new Vector2(snowflakeTexture.Width / 2, snowflakeTexture.Height / 2);
+                var origin = new Vector2((float)snowflakeTexture.Width / 2, (float)snowflakeTexture.Height / 2);
                 var position = new Vector2(snowflake.X, snowflake.Y);
 
                 spriteBatch.Draw(

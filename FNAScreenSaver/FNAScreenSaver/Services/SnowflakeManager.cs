@@ -1,6 +1,6 @@
 ﻿using FNAScreenSaver.Models;
 using Microsoft.Xna.Framework;
-using System;
+
 namespace FNAScreenSaver.Services
 {
     /// <summary>
@@ -26,7 +26,7 @@ namespace FNAScreenSaver.Services
 
         private void InitializeSnowflakes()
         {
-            for (int i = 0; i < snowflakes.Length; i++)
+            for (var i = 0; i < snowflakes.Length; i++)
             {
                 snowflakes[i] = new Snowflake();
                 snowflakes[i].Reset((int)screenWidth);
